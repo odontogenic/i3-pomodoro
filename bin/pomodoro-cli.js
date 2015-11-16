@@ -33,11 +33,6 @@ program
     .option('-s, --set <config>', 'Set config', list)
     .parse(process.argv)
 
-function collect(val, memo) {
-    memo.push(val)
-    return memo
-}
-
 if (program.toggle) {
     send(ActionTypes.TOGGLE)
 } else if (program.reset) {
