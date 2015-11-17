@@ -6,13 +6,11 @@
  * USAGE
  *
  * pomodoro <>
- *      --toggle
- *      pause
- *      start
- *      stop
- *      reset
- *      set <session, short break, long break in min>
- *          By default this is 25,5,15
+ *   --toggle
+ *   --pause
+ *   --start
+ *   --stop
+ *   --reset
  *
  */
 
@@ -30,7 +28,7 @@ program
     .option('-r, --reset', 'Reset current session')
     .option('-n, --next', 'Skip to next session')
     .option('-c, --clear', 'Clear sessions')
-    .option('-s, --set <config>', 'Set config', list)
+    // .option('-s, --set <config>', 'Set config', list)
     .parse(process.argv)
 
 if (program.toggle) {
@@ -48,20 +46,20 @@ if (program.toggle) {
     process.exit(1)
 }
 
-function list(val) {
-    return val.split(',')
-}
-
-function set(config) {
-
-    let time = {
-        session: 1000 * 60 * 25,
-        shortBreak: 1000 * 60 * 5,
-        longBreak: 1000 * 60 * 15
-    }
-
-    send(ActionTypes.RESET)
-}
+// function list(val) {
+//     return val.split(',')
+// }
+//
+// function set(config) {
+//
+//     let time = {
+//         session: 1000 * 60 * 25,
+//         shortBreak: 1000 * 60 * 5,
+//         longBreak: 1000 * 60 * 15
+//     }
+//
+//     send(ActionTypes.RESET)
+// }
 
 function send(action) {
     let client = dgram.createSocket("udp4")
