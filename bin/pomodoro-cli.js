@@ -27,7 +27,9 @@ program
     .version('0.0.1')
     .option('-s, --start', 'Start session')
     .option('-t, --toggle', 'Toggle session')
-    .option('-r, --reset', 'Reset current session')
+    .option('-R, --reset', 'Reset current session')
+    .option('-p, --pause', 'Pause session')
+    .option('-r, --resume', 'Resume session')
     .option('-n, --next', 'Skip to next session')
     .option('-c, --clear', 'Clear sessions')
     // .option('-s, --set <config>', 'Set config', list)
@@ -37,14 +39,16 @@ if (program.toggle) {
     send(ActionTypes.TOGGLE)
 } else if (program.start) {
     send(ActionTypes.START)
+} else if (program.pause) {
+    send(ActionTypes.PAUSE)
+} else if (program.resume) {
+    send(ActionTypes.RESUME)
 } else if (program.reset) {
     send(ActionTypes.RESET)
 } else if (program.next) {
     send(ActionTypes.NEXT)
 } else if (program.clear) {
     send(ActionTypes.CLEAR)
-} else if (program.set) {
-    set(program.set)
 } else {
     program.outputHelp()
     process.exit(1)
