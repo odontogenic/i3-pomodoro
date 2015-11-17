@@ -6,6 +6,7 @@
  * USAGE
  *
  * pomodoro <>
+ *   --start
  *   --toggle
  *   --pause
  *   --start
@@ -24,6 +25,7 @@ import ActionTypes from '../lib/actions'
 
 program
     .version('0.0.1')
+    .option('-s, --start', 'Start session')
     .option('-t, --toggle', 'Toggle session')
     .option('-r, --reset', 'Reset current session')
     .option('-n, --next', 'Skip to next session')
@@ -33,6 +35,8 @@ program
 
 if (program.toggle) {
     send(ActionTypes.TOGGLE)
+} else if (program.start) {
+    send(ActionTypes.START)
 } else if (program.reset) {
     send(ActionTypes.RESET)
 } else if (program.next) {
