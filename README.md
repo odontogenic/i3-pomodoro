@@ -37,7 +37,7 @@ __Control pomodoro via button click. Configure in block.sh__
 * BTN 2 (middle): Reset sessions
 * BTN 3 (right):  Next session
 
-** Control pomodoro via cli **
+__Control pomodoro via cli__
 
 `pomodoro-cli --next`
 
