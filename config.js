@@ -1,17 +1,17 @@
 'use strict'
 
 export default ({
-    hostname: 'localhost',
-    port: 41234,
+    hostname: 'localhost', // udp hostname
+    port: 41234, // udp port
     signal: 2, // kill signal
     output: `${process.env.HOME}/tmp/pomodoro`,
-    periods: {
+    periods: { // length in ms
         session: 1000 * 60 * 25,
         shortBreak: 1000 * 60 * 5,
         longBreak: 1000 * 60 * 15
     },
     colors: {
-        session: '#FFFFFF',
+        session: '#DBDBDB',
         break: '#CAE682',
         inactive: '#666666'
     },
