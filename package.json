@@ -19,6 +19,7 @@
   "dependencies": {
     "commander": "^2.9.0",
     "keymirror": "^0.1.1",
+    "play-sound": "0.0.7",
     "redis": "^2.3.0"
   }
 }
