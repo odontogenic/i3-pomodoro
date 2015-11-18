@@ -14,5 +14,9 @@ export default ({
         session: '#FFFFFF',
         break: '#CAE682',
         inactive: '#666666'
+    },
+    sounds: {
+        finish: `${__dirname}/sounds/glass.aiff`,
+        start: `${__dirname}/sounds/ping.aiff`
     }
 })

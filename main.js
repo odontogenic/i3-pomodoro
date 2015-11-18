@@ -1,8 +1,8 @@
 'use strict'
 
 
-import Server from './lib/server'
 import Pomodoro from './lib/pomodoro'
+import Server from './lib/server'
 
 let pomodoro = new Pomodoro(),
     server = new Server(pomodoro)
@@ -12,6 +12,7 @@ server.run()
 function exitHandler(err, options) {
     if (err) console.log(err.stack)
 
+    pomodoro.write() // write final state
     pomodoro.writer.close()
     pomodoro.store.close()
 
