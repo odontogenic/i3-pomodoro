@@ -12,7 +12,6 @@ see [Wikipedia] (https://en.wikipedia.org/wiki/Pomodoro_Technique)
 > word pomodoro meaning "tomato".[2] The method is based on the
 > idea that frequent breaks can improve mental agility.
 
----
 
 ## Installation ##
 
@@ -20,7 +19,7 @@ see [Wikipedia] (https://en.wikipedia.org/wiki/Pomodoro_Technique)
 
 *Note: redis expected to be running on localhost:6379*
 
-** i3block config **
+__i3block config__
 
     [pomodoro]
     command=~/projects/i3-pomodoro/block.sh
@@ -29,11 +28,10 @@ see [Wikipedia] (https://en.wikipedia.org/wiki/Pomodoro_Technique)
 
 *Note: signal must match that given in config.js*
 
----
 
 ## Usage ##
 
-** Control pomodoro via button click. Configure in block.sh **
+__Control pomodoro via button click. Configure in block.sh__
 
 * BTN 1 (left):   Toggle session
 * BTN 2 (middle): Reset sessions
@@ -51,7 +49,6 @@ see [Wikipedia] (https://en.wikipedia.org/wiki/Pomodoro_Technique)
 
 `pomodoro-cli --clear`
 
----
 
 ## Screenshots ##
 
