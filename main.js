@@ -1,10 +1,15 @@
 'use strict'
 
+const Pomodoro = require('./lib/pomodoro')
+const Server = require('./lib/server')
+const Store = require('./lib/store')
+const Writer = require('./lib/writer')
+const player = require('play-sound')
+const redis = require('redis')
 
-import Pomodoro from './lib/pomodoro'
-import Server from './lib/server'
-
-let pomodoro = new Pomodoro(),
+let writer = new Writer(),
+    store = new Store(redis.createClient()),
+    pomodoro = new Pomodoro(store, writer, player({})),
     server = new Server(pomodoro)
 
 server.run()

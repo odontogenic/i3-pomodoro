@@ -1,6 +1,6 @@
 'use strict'
 
-export default ({
+let config = ({
     hostname: 'localhost', // udp hostname
     port: 41234, // udp port
     signal: 2, // kill signal
@@ -20,3 +20,5 @@ export default ({
         start: `${__dirname}/sounds/ping.aiff`
     }
 })
+
+module.exports = config
