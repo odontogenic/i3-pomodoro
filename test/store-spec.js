@@ -1,10 +1,11 @@
 'use strict'
 
-let expect = require('chai').expect
-let sinon = require('sinon')
-let redis = require('redis')
-let fakeredis = require('fakeredis')
-let Store = require('../lib/store')
+const expect = require('chai').expect
+const sinon = require('sinon')
+const redis = require('redis')
+const fakeredis = require('fakeredis')
+const config = require('../config')
+const Store = require('../lib/store')
 
 let client, store
 
@@ -27,7 +28,7 @@ describe('Store', () => {
         })
     })
 
-    it('getPeriods should create periods', function(done) {
+    it('getPeriods should get or create periods', function(done) {
         store.getPeriods().then((periods) => {
             expect(periods.length).to.equal(8)
             done()
@@ -48,8 +49,23 @@ describe('Store', () => {
         })
     })
 
-    it('next should advance ', function() {
+    it('setPeriod should set a period at a specified position', function(done) {
+        let period = {
+            _id: 10,
+            complete: 0,
+            remaining: config.periods.session
+        }
 
+        store.getPeriods().then(() => {
+            store.setPeriod(0, period, (err) => {
+                store.getPeriods().then((periods) => {
+                    expect(periods.length).to.equal(8)
+                    expect(periods.shift()).to.eql(period) // deep.equal
+                    done()
+                })
+            })
+
+        })
     })
 
 })
