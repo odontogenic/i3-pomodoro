@@ -1,4 +1,4 @@
-#!/usr/bin/env babel-node
+#!/usr/bin/env node
 
 /**
  * pomodoro.js
@@ -15,11 +15,10 @@
 
 'use strict'
 
-import program from 'commander'
-import dgram from 'dgram'
-import config from '../config'
-import ActionTypes from '../lib/actions'
-
+const program = require('commander')
+const dgram = require('dgram')
+const config = require('../config')
+const ActionTypes = require('../lib/actions')
 
 program
     .version('0.0.1')
