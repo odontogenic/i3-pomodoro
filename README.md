@@ -1,6 +1,10 @@
 # i3-pomodoro #
 
-Manage pomodoro sessions from i3 bar
+This utility built in Node.js allows one to manage pomodoro sessions from the
+i3 bar (via i3blocks).  The block is clickable and can control session toggling
+etc.  In addition, key bindings can be assigned to the cli. Redis allows for
+persistence of sessions across reboots.  Refer to instructions and screenshots
+below.
 
 see [Wikipedia] (https://en.wikipedia.org/wiki/Pomodoro_Technique)
 
@@ -17,19 +21,23 @@ see [Wikipedia] (https://en.wikipedia.org/wiki/Pomodoro_Technique)
 
 `npm install`
 
-*Note: redis expected to be running on localhost:6379*
+*Note: Redis expected to be running on localhost:6379*
 
-__i3block config__
+__i3blocks config__
 
     [pomodoro]
     command=~/projects/i3-pomodoro/block.sh
     signal=2
     interval=once
 
-*Note: signal must match that given in config.js*
+*Note: signal must match that provided in config.js*
 
 
 ## Usage ##
+
+__Run__
+
+`npm start`
 
 __Control pomodoro via button click. Configure in block.sh__
 

@@ -4,8 +4,8 @@
   "description": "Manage pomodoro sessions through i3",
   "main": "main.js",
   "scripts": {
-    "start": "babel-node main.js",
-    "test": "mocha --compilers js:babel-core/register"
+    "start": "node main.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
