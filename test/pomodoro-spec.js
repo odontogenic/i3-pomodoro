@@ -58,9 +58,9 @@ describe('Pomodoro', function() {
 
         pomodoro.resume()
 
-		clock.tick(tick)
+        clock.tick(tick)
 
-		pomodoro.remaining.should.equal(config.periods.session - tick)
+        pomodoro.remaining.should.equal(config.periods.session - tick)
         clock.restore()
     })
 
