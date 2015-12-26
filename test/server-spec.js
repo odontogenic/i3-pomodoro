@@ -6,9 +6,6 @@ const sinon = require('sinon')
 const sinonChai = require('sinon-chai')
 const Server = require('../lib/server')
 const fork = require('child_process').fork
-const ActionTypes = require('../lib/actions')
-
-// const Pomodoro = require('../lib/pomodoro')
 
 let pomodoro = {
     toggle: sinon.stub(),
